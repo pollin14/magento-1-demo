@@ -7,7 +7,7 @@
 
   roles:
     - common
-    - nginx
+    - apache
     - php-fpm
     - ssl
     - reverse-proxy
