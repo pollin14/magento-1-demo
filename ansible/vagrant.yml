@@ -1,0 +1,13 @@
+- name: webservers
+  hosts: [webservers, mysql]
+  become: true
+  vars:
+    fpm_socket: /var/run/www.sock
+    fpm_pool_dir: /etc/php5/fpm/pool.d
+  roles:
+    - common
+    - nginx
+    - php-fpm
+    - ssl
+    - mysql
+    - vagrant

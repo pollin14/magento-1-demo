@@ -1,0 +1,61 @@
+{% if debug %}
+    {% set log_level = "debug" %}
+{% else %}
+    {% set log_level = "error" %}
+{% endif %}
+
+server {
+    listen 80 default_server;
+    listen 443 default ssl;
+    server_name _;
+
+    ssl_certificate /etc/nginx/ssl/{{ domain }}.crt;
+    ssl_certificate_key /etc/nginx/ssl/{{ domain }}.key;
+
+    root {{project_path}};
+    index index.html index.htm;
+
+    access_log /var/log/nginx/access.log;
+    error_log /var/log/nginx/error.log {{ log_level }};
+
+    gzip on;
+    gzip_disable "msie6";
+    gzip_comp_level 7;
+    gzip_types text/plain text/css text/js application/x-javascript application/javascript text/javascript application/json application/x-font-ttf;
+
+    fastcgi_buffers 16  16k;
+    fastcgi_buffer_size 32k;
+
+    client_max_body_size {{ max_body_size }}M;
+
+    #
+    # Any thing with a slash as prefix is rewrite. Note that try_files will always fails to serve the file so
+    # the path is always rewritten.
+    #
+    location / {
+        try_files $uri @rewrite_app;
+    }
+
+    location /js {
+        try_files $uri =404;
+    }
+
+    location /skin {
+        try_files $uri =404;
+    }
+
+    #
+    # All the .php are pass to PHP-FPM
+    #
+    location ~* \.php {
+        fastcgi_pass unix:{{ fpm_socket }};
+        fastcgi_split_path_info ^(.+\.php)(/.*)$;
+        include fastcgi_params;
+        fastcgi_param  SCRIPT_FILENAME    $document_root$fastcgi_script_name;
+        fastcgi_param HTTP_PROXY ""; # httpoxy vulnerability
+    }
+
+    location @rewrite_app {
+      rewrite ^(.*)$ /index.php$1 last;
+    }
+}

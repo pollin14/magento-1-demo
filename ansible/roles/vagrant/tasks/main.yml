@@ -1,0 +1,38 @@
+- name: Create base directory
+  file:
+    state: directory
+    path: /var/www
+    owner: vagrant
+    group: www-data
+    mode: 0754
+
+- name: Change nginx user
+  lineinfile:
+    name: /etc/nginx/nginx.conf
+    regexp: '^user'
+    line: 'user vagrant;'
+
+- name: Change php-fpm owner
+  lineinfile:
+    name: /etc/php5/fpm/pool.d/www.conf
+    regexp: '^listen\.owner.*www-data'
+    line: 'listen.owner = vagrant'
+
+- name: Change php-fpm group
+  lineinfile:
+    name: /etc/php5/fpm/pool.d/www.conf
+    regexp: '^listen\.group.*www-data'
+    line: 'listen.group = vagrant'
+
+- name: Change php-fpm socket permissions
+  file:
+    path: "{{ fpm_socket }}"
+    owner: vagrant
+    group: vagrant
+  tags:
+    - config
+
+- name: Add vagrant user to www-data group
+  user:
+    name: vagrant
+    groups: www-data

@@ -1,0 +1,20 @@
+
+- name: Create directory
+  file:
+    state: directory
+    path: /etc/nginx/ssl
+
+- name: create self-signed SSL cert
+  command: >
+    openssl req
+    -new
+    -newkey rsa:2048
+    -nodes
+    -x509
+    -days 365
+    -subj "/C=US/ST=Oregon/L=Portland/O=IT/CN=*.{{ domain }}"
+    -keyout /etc/nginx/ssl/{{ domain }}.key
+    -out /etc/nginx/ssl/{{ domain }}.crt
+  args:
+    creates: "/etc/nginx/ssl/{{ domain }}.crt"
+  notify: restart nginx
