@@ -36,3 +36,8 @@
   user:
     name: vagrant
     groups: www-data
+
+- name: Create environment variables
+  copy:
+    src: magento.sh
+    dest: /etc/profile.d/
