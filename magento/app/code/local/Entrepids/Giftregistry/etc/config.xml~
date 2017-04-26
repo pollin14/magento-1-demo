@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<config>
+    <modules>
+        <Entrepids_Giftregistry>
+            <version>0.1.0</version>
+        </Entrepids_Giftregistry>
+    </modules>
+    <global>
+        <models>
+            <entrepids_giftregistry>
+                <class>Entrepids_Giftregistry_Model</class>
+                <resourceModel>entrepids_giftregistry_mysql4</resourceModel>
+            </entrepids_giftregistry>
+        </models>
+        <block>
+            <entrepids_giftregistry>
+                <class>Entrepids_Girftregistry_Block</class>
+            </entrepids_giftregistry>
+        </block>
+        <helpers>
+            <entrepids_giftregistry>
+                <class>Entrepids_Girftregistry_Helper</class>
+            </entrepids_giftregistry>
+        </helpers>
+        <resources>
+            <entrepids_giftregistry>
+                <class>Entrepids_Girftregistry</class>
+            </entrepids_giftregistry>
+        </resources>
+    </global>
+</config>
