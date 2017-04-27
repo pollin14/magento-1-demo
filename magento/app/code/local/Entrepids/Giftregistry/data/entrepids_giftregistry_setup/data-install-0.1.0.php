@@ -25,7 +25,6 @@ $registryTypes = array(
 
 foreach ($registryTypes as $data) {
     Mage::getModel('entrepids_giftregistry/type')
-        ->addData($data)
-        ->setStoreId($data['store_id'])
+        ->setData($data)
         ->save();
 }

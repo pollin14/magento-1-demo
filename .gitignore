@@ -8,3 +8,6 @@
 .tar
 .gz
 .7z
+*~
+magento/var
+magento/app/locale/

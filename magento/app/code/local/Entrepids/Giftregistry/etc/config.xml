@@ -9,10 +9,10 @@
         <models>
             <entrepids_giftregistry>
                 <class>Entrepids_Giftregistry_Model</class>
-                <resourceModel>entrepids_giftregistry_mysql4</resourceModel>
+                <resourceModel>entrepids_giftregistry_resource</resourceModel>
             </entrepids_giftregistry>
-            <entrepids_giftregistry_mysql4>
-                <class>Entrepids_Giftregistry_Model_Mysql4</class>
+            <entrepids_giftregistry_resource>
+                <class>Entrepids_Giftregistry_Model_Resource</class>
                 <entities>
                     <entity>
                         <table>entrepids_giftregistry_entity</table>
@@ -24,7 +24,7 @@
                         <table>entrepids_giftregistry_type</table>
                     </type>
                 </entities>
-            </entrepids_giftregistry_mysql4>
+            </entrepids_giftregistry_resource>
         </models>
         <block>
             <entrepids_giftregistry>
@@ -39,24 +39,22 @@
         <resources>
             <entrepids_giftregistry_setup>
                 <setup>
-                    <module>
-                        Entrepids_Giftregistry
-                    </module>
+                    <module>Entrepids_Giftregistry</module>
                     <class>Entrepids_Giftregistry_Model_Resource_Setup</class>
                 </setup>
-                <conection>
+                <connection>
                     <use>core_setup</use>
-                </conection>
+                </connection>
             </entrepids_giftregistry_setup>
             <entrepids_giftregistry_write>
-                <conection>
+                <connection>
                     <use>core_write</use>
-                </conection>
+                </connection>
             </entrepids_giftregistry_write>
             <entrepids_giftregistry_read>
-                <conection>
+                <connection>
                     <use>core_read</use>
-                </conection>
+                </connection>
             </entrepids_giftregistry_read>
         </resources>
     </global>

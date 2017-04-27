@@ -32,6 +32,6 @@
  * @package     Mage_Core
  * @author      Magento Core Team <core@magentocommerce.com>
  */
-class Mage_Core_Model_Mysql4_Collection_Abstract extends Mage_Core_Model_Resource_Db_Collection_Abstract
+class Mage_Core_Model_Resource_Db_Collection_AbstractMage_Core_Model_Mysql4_Collection_Abstract extends Mage_Core_Model_Resource_Db_Collection_Abstract
 {
 }
