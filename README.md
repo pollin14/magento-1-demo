@@ -22,6 +22,7 @@ sudo apt-get install vagrant git virtualbox ansible
 Lo pasos para tener un ambiente de desarrollo funcional son los siguientes
 
 * Clonar este *repository*
+* Ejecutar `ansible-galaxy install -r ansible/requirements.yml --roles-path ./ansible/vendor`
 * Ejecutar `vagrant plugin install vagrant-hostsupdater` (ver nota)
 * Ejecutar `vagrant up --provision` para crear y provisionar la máquina viertual.
 * Ahora la página es accessible desde `www.aeroroad.dev`
@@ -30,9 +31,11 @@ Installing the 'vagrant-hostsupdater' plugin. This can take a few minutes...
 /usr/lib/ruby/2.3.0/rubygems/specification.rb:946:in `all=': undefined method `group_by' for nil:NilClass (NoMethodError)
 ```
 
-## Provicionar manualmente
+## Provisionando manualmente
+
+Enter to the `ansible` directory
 
 #### Local
 ```
-ansible-playbook webservers.yml mysql.yml -i inventaries/local/hosts.yml
+ansible-playbook vagrant.yml -i local/hosts.yml
 ```

@@ -2,6 +2,7 @@
 .idea
 /ansible/inventaries/production
 /ansible/inventaries/staging
+/ansible/vendor
 .vagrant
 /project
 .zip
