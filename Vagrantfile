@@ -16,6 +16,9 @@ Vagrant.configure("2") do |config|
       ansible.playbook = "ansible/vagrant.yml"
       ansible.limit = "all"
       ansible.inventory_path = "ansible/inventaries/local"
+      ansible.config_file = "ansible/.ansible.cfg"
+      ansible.galaxy_roles_path = "ansible/vendor"
+      ansible.galaxy_role_file = "ansible/requirements.yml"
     end
   # config.vm.network :forwarded_port, host: 4567, guest: 80
 
@@ -41,7 +44,7 @@ Vagrant.configure("2") do |config|
   config.vm.synced_folder "./magento", "/var/www/aeroroad",
     owner: "vagrant",
     group: "www-data",
-    mount_options: ["dmode=775,fmode=664"]
+    mount_options: ["dmode=755,fmode=640"]
 
   # The hostname of virtual machine
   config.vm.hostname = 'aeroroad'
