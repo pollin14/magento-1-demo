@@ -5,6 +5,17 @@
             <version>0.1.0</version>
         </Entrepids_Giftregistry>
     </modules>
+    <frontend>
+        <routers>
+            <entrepids_giftregistry>
+                <use>standard</use>
+                <args>
+                    <module>Entrepids_Giftregistry</module>
+                    <frontName>giftregistry</frontName>
+                </args>
+            </entrepids_giftregistry>
+        </routers>
+    </frontend>
     <global>
         <models>
             <entrepids_giftregistry>
