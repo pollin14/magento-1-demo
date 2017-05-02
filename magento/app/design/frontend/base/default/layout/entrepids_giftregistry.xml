@@ -1,5 +1,40 @@
 <?xml version="1.0"?>
 <layout version="0.1.0">
+    <catalog_product_view translate="label"> <!-- page name -->
+        <!--
+        Used to link an existent block.
+        - To add a new child block an existent block
+        - To modify attributes of a existent block
+        - To do any action on a existing block
+        -->
+        <reference name="product.info">
+            <!--
+            Description of the node BLOCK.
+
+            type: uri in the global configuration. Has to parts, the first is the name of the base class. The
+            second part will be added to the base class name so Magento can create an instance of the block.
+            Example: In the module giftregistry you can see the the base class registered into
+
+            config>block>entrepids_registry => Entrepids_Registry_Block
+
+            Then the instantiated class will be Entrepids_Registry_Block_Add
+
+            as: Alias of the block, used by function as getChildHtml in the template.
+
+            template: Magento path of the template that will be rendered by the block.
+
+            name: Use to identified the block inside the configuration files. You could use in a reference node, for
+            example.
+            -->
+            <block type="entrepids_giftregistry/add"
+                   name="registry.add"
+                   as="registry_add"
+                   template="entrepids/add_to_registry.phtml" />
+        </reference>
+    </catalog_product_view>
+
+    <!-- Entrepids GiftRegistry Module -->
+
     <entrepids_giftregistry_index_index>
         <reference name="root">
             <action method="setTemplate">

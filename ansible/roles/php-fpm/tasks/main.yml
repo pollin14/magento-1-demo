@@ -40,6 +40,10 @@
     - restart php5-fpm
     - restart nginx
 
+- name: Fix xdebug extension
+  shell: echo zend_extension="$(find /usr/lib/php5/ -name xdebug.so)" >> /etc/php5/mods-available/xdebug.ini
+  when: debug
+
 - name: Disable default pool
   # Move the default pool if they haven't be moved.
   command: >

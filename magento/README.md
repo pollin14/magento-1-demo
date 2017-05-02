@@ -34,6 +34,9 @@ For example: `/design/frontend/base/default/layout/giftregistry.xml`
 Adding our templates and layouts to the `base/default` theme,
 we'll make our templates and layouts available to all stores and themes.
 
+NOTE: If you want to add a custom content to an existent view, for example to product view, you need to added
+ to each theme that has that view.
+
 A template is associated only with a block. The block that the template will use
 to be defined by the `type` attribute of the node `layout>entrepids_giftregistry_index_new>reference>block`
 
