@@ -15,6 +15,13 @@
                 </args>
             </entrepids_giftregistry>
         </routers>
+        <layout>
+            <updates>
+                <entrepids_giftregistry module="entrepids_giftregistry">
+                    <file>entrepids_giftregistry.xml</file>
+                </entrepids_giftregistry>
+            </updates>
+        </layout>
     </frontend>
     <global>
         <models>

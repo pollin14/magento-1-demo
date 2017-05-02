@@ -18,6 +18,8 @@ class Entrepids_Giftregistry_IndexController extends Mage_Core_Controller_Front_
 
             $this->setFlag('', self::FLAG_NO_DISPATCH, true);
         }
+
+        return $this;
     }
 
     public function indexAction()
