@@ -23,6 +23,26 @@
             </updates>
         </layout>
     </frontend>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <entrepids_giftregistry before="Mage_Adminhtml">Entrepids_Giftregistry_Adminhtml</entrepids_giftregistry>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+    <adminhtml>
+        <layout>
+            <updates>
+                <entrepids_giftregistry module="entrepids_giftregistry">
+                    <file>entrepids_giftregistry.xml</file>
+                </entrepids_giftregistry>
+            </updates>
+        </layout>
+    </adminhtml>
     <global>
         <models>
             <entrepids_giftregistry>

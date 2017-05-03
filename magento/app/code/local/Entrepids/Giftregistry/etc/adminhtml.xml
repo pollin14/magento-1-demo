@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<config>
+    <menu>
+        <entrepids_giftregistry module="entrepids_giftregistry">
+            <title>Gift Registry</title>
+            <sort_order>71</sort_order>
+            <children>
+                <items module="entrepids_giftregistry">
+                    <title>Manage Registries</title>
+                    <sort_order>0</sort_order>
+                    <action>adminhtml/giftregistry/index</action>
+                </items>
+            </children>
+        </entrepids_giftregistry>
+    </menu>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <entrepids_giftregistry translate="title"
+                                            module="entrepids_giftregistry">
+                        <title>Gift Registry</title>
+                        <sort_order>300</sort_order>
+                        <children>
+                            <items translate="title"
+                                   module="entrepids_giftregistry">
+                                <title>Manage Registries</title>
+                                <sort_order>0</sort_order>
+                            </items>
+                        </children>
+                    </entrepids_giftregistry>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>
