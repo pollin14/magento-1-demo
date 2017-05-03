@@ -10,5 +10,11 @@
 .gz
 .7z
 *~
+
+###########
+# Magento
+###########
+
 magento/var
 magento/app/locale/
+magento/media/

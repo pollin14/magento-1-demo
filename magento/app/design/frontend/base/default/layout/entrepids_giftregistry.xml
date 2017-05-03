@@ -29,7 +29,7 @@
             <block type="entrepids_giftregistry/add"
                    name="registry.add"
                    as="registry_add"
-                   template="entrepids_giftregistry/add_to_registry.phtml" />
+                   template="entrepids_giftregistry/add_to_registry.phtml"/>
         </reference>
     </catalog_product_view>
 
