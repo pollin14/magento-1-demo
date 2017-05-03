@@ -21,4 +21,15 @@
             </reference>
         </reference>
     </adminhtml_customer_edit>
+    <!--
+    The name of the node must be the controller + action.
+
+    The registries block will use the base theme so it is not necessary set the template attribute.
+    -->
+    <adminhtml_giftregistry_index>
+        <reference name="content">
+            <block type="entrepids_giftregistry/adminhtml_registries"
+                   name="registries" />
+        </reference>
+    </adminhtml_giftregistry_index>
 </layout>

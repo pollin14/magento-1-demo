@@ -4,8 +4,6 @@ class Entrepids_Giftregistry_Adminhtml_GiftregistryController extends Mage_Admin
 {
     public function indexAction()
     {
-        echo Mage::app()->getLayout()->getXmlString();
-
         $this->loadLayout();
         $this->renderLayout();
         return $this;
@@ -35,8 +33,28 @@ class Entrepids_Giftregistry_Adminhtml_GiftregistryController extends Mage_Admin
 
     public function massDeleteAction()
     {
-        $this->loadLayout();
-        $this->renderLayout();
+        $registryIds = $this->getRequest()->getParam('registries');
+        if (!is_array($registryIds)) {
+            Mage::getSingleton('adminhtml/session')->
+            addError(Mage::helper('entrepids_giftregistry')->__('Please select one or more registries.'));
+        } else {
+            try {
+
+                foreach ($registryIds as $registryId) {
+                    $registry = Mage::getModel('entrepids_giftregistry/entity');
+                    $registry->load($registryId)
+                        ->delete();
+                }
+
+                Mage::getSingleton('adminhtml/session')->addSuccess(
+                    Mage::helper('adminhtml')->__('Total of %d record(s) were deleted.', count($registryIds))
+                );
+            } catch (Exception $e) {
+                Mage::getSingleton('adminhtml/session')->addError($e->getMessage());
+            }
+        }
+
+        $this->_redirect('*/*/index');
         return $this;
     }
 }
