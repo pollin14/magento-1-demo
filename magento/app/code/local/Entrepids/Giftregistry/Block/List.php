@@ -15,15 +15,8 @@ class Entrepids_Giftregistry_Block_list extends Mage_Core_Block_Template
         }
 
         $collection = Mage::getModel('entrepids_giftregistry/entity')->getCollection()
-            ->addFieldToFilter('customer_id', $currentCustomer->getId())->count;
+            ->addFieldToFilter('customer_id', $currentCustomer->getId());
 
         return $collection;
-    }
-
-    public function isRegistryOwner($registryCustomerId)
-    {
-        $currentCustomer = Mage::getSingleton('customer/session')->getCustomer();
-
-        return !$currentCustomer && $currentCustomer->getId() === $registryCustomerId;
     }
 }

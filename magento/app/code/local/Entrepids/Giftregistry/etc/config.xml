@@ -44,11 +44,11 @@
                 </entities>
             </entrepids_giftregistry_resource>
         </models>
-        <block>
+        <blocks>
             <entrepids_giftregistry>
                 <class>Entrepids_Giftregistry_Block</class>
             </entrepids_giftregistry>
-        </block>
+        </blocks>
         <helpers>
             <entrepids_giftregistry>
                 <class>Entrepids_Giftregistry_Helper</class>
