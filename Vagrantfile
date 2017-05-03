@@ -44,7 +44,7 @@ Vagrant.configure("2") do |config|
   config.vm.synced_folder "./magento", "/var/www/aeroroad",
     owner: "vagrant",
     group: "www-data",
-    mount_options: ["dmode=755,fmode=640"]
+    mount_options: ["dmode=775,fmode=660"]
 
   # The hostname of virtual machine
   config.vm.hostname = 'aeroroad'
