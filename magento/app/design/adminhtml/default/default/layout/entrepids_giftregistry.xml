@@ -8,7 +8,7 @@
                        template="entrepids_giftregistry/customer/main.phtml">
                     <!--
                      This is a child block and can be rendered using the getChildHtml() with or without parameters.
-                     If is used without parameters all the children blocks will be loaded and rendred.
+                     If is used without parameters all the children blocks will be loaded and render.
                      -->
                     <block type="entrepids_giftregistry/adminhtml_customer_edit_tab_giftregistry_list"
                            name="tab_giftregistry_list"
@@ -23,7 +23,6 @@
     </adminhtml_customer_edit>
     <!--
     The name of the node must be the controller + action.
-
     The registries block will use the base theme so it is not necessary set the template attribute.
     -->
     <adminhtml_giftregistry_index>
@@ -32,4 +31,11 @@
                    name="registries" />
         </reference>
     </adminhtml_giftregistry_index>
+
+    <adminhtml_giftregistry_edit>
+        <reference name="content">
+            <block type="entrepids_giftregistry/adminhtml_registries_edit"
+                   name="new_registry_tabs" />
+        </reference>
+    </adminhtml_giftregistry_edit>
 </layout>
