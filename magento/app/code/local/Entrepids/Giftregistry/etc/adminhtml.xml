@@ -22,6 +22,10 @@
                         <title>Gift Registry</title>
                         <sort_order>300</sort_order>
                         <children>
+                            <!--
+                                The name of this node must be the resource name, that is the node name defined in
+                                config > menu>entrepids_giftregistry > children in this same file.
+                            -->
                             <items translate="title"
                                    module="entrepids_giftregistry">
                                 <title>Manage Registries</title>
