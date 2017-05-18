@@ -1,7 +1,0 @@
-- name: RDBMS
-  hosts: mysql
-  become: true
-
-  roles:
-    - common
-    - mysql
