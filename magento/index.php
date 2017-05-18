@@ -65,7 +65,7 @@ require MAGENTO_ROOT . '/app/bootstrap.php';
 require_once $mageFilename;
 
 
-if (isset($_SERVER['MAGE_PROFILER_ENABLED'])) {
+if (isset($_SERVER['MAGE_IS_PROFILER_ENABLED'])) {
     Varien_Profiler::enable();
 }
 
